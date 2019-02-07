@@ -1,0 +1,14 @@
+alias get_coverage_analysis="coverage report -m --skip-covered"
+alias restart_postgres_database_connections="sudo service postgresql restart"
+alias containerised_ubuntu="sudo docker run -it ubuntu"
+alias start_postgres="sudo pg_ctlcluster 9.5 main start"
+alias stop_postgres="sudo pg_ctlcluster 9.5 main stop"
+alias kill_port_8000="sudo fuser -k 8000/tcp"
+alias restart_docker="sudo service docker restart"
+alias bluejeans="/opt/bluejeans/bluejeans-bin"
+function git_delete_branches {
+        git branch | awk '{if ($1 != "*" && $1 != "master" && $1 != "develop") print "git branch -D ",$1}'
+}
+alias how_much_space_left="ncdu"
+alias fresh_py3_virtualenv="virtualenv --no-site-packages -p /usr/bin/python3 .py3_env"
+alias uninstall_all_pip_packages="pip freeze | awk '{FS = \"==\"} {print \"pip uninstall -y\", \$1}' | bash"
